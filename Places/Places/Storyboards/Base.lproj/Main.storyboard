@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="coD-YT-8mh">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Place-->
+        <scene sceneID="Lgm-JQ-9RY">
+            <objects>
+                <viewController id="C6x-zb-Flt" customClass="CreateNewPlaceViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dkB-GH-jiA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4em-x5-Bre">
+                                <rect key="frame" x="20" y="283" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude (-90 to 90)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVu-nD-qiG">
+                                <rect key="frame" x="20" y="335" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude (-180 to 180)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uS3-mv-Src">
+                                <rect key="frame" x="20" y="385" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tim-9v-494">
+                                <rect key="frame" x="169.5" y="433" width="75" height="30"/>
+                                <state key="normal" title="Save Place"/>
+                                <connections>
+                                    <action selector="savePlaceButtonPressed:" destination="C6x-zb-Flt" eventType="touchUpInside" id="Mqq-uT-dxB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jVu-nD-qiG" firstAttribute="leading" secondItem="uS3-mv-Src" secondAttribute="leading" id="2EN-p9-tb6"/>
+                            <constraint firstItem="4em-x5-Bre" firstAttribute="trailing" secondItem="jVu-nD-qiG" secondAttribute="trailing" id="CQ1-Uh-cAM"/>
+                            <constraint firstItem="uS3-mv-Src" firstAttribute="centerX" secondItem="Tim-9v-494" secondAttribute="centerX" id="Jbi-z0-EAS"/>
+                            <constraint firstItem="jVu-nD-qiG" firstAttribute="trailing" secondItem="uS3-mv-Src" secondAttribute="trailing" id="MQc-O2-TwJ"/>
+                            <constraint firstItem="Tim-9v-494" firstAttribute="top" secondItem="uS3-mv-Src" secondAttribute="bottom" constant="18" id="Pgg-MY-kXV"/>
+                            <constraint firstItem="uS3-mv-Src" firstAttribute="top" secondItem="jVu-nD-qiG" secondAttribute="bottom" constant="20" id="Sv4-Ie-rfk"/>
+                            <constraint firstItem="4em-x5-Bre" firstAttribute="trailing" secondItem="dkB-GH-jiA" secondAttribute="trailingMargin" id="TVy-5v-POQ"/>
+                            <constraint firstItem="Tim-9v-494" firstAttribute="centerY" secondItem="dkB-GH-jiA" secondAttribute="centerY" id="XlY-g2-k67"/>
+                            <constraint firstItem="4em-x5-Bre" firstAttribute="top" secondItem="hkJ-o3-Kj1" secondAttribute="top" constant="239" id="kOq-Q0-psu"/>
+                            <constraint firstItem="4em-x5-Bre" firstAttribute="leading" secondItem="dkB-GH-jiA" secondAttribute="leadingMargin" id="oSI-Kg-EhQ"/>
+                            <constraint firstItem="4em-x5-Bre" firstAttribute="leading" secondItem="jVu-nD-qiG" secondAttribute="leading" id="p8T-yp-L5c"/>
+                            <constraint firstItem="Tim-9v-494" firstAttribute="centerX" secondItem="dkB-GH-jiA" secondAttribute="centerX" id="yVf-Ry-qvN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hkJ-o3-Kj1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add Place" image="Plus" id="4la-pm-efv"/>
+                    <connections>
+                        <outlet property="latitudeTextField" destination="jVu-nD-qiG" id="jPD-NY-5pA"/>
+                        <outlet property="locationTextField" destination="4em-x5-Bre" id="pyV-mc-WLX"/>
+                        <outlet property="longitudeTextField" destination="uS3-mv-Src" id="Xa7-c3-fP2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34a-IK-mPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="-256"/>
+        </scene>
+        <!--Places-->
+        <scene sceneID="Ftv-AS-l3s">
+            <objects>
+                <viewController id="svB-gS-EC4" customClass="VisitedPlacesViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5sT-qR-DEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwu-Cx-fcy" userLabel="MapView Container">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="402.5"/>
+                                <connections>
+                                    <segue destination="Hka-fD-DUO" kind="embed" identifier="MapView" id="GYD-wn-1Z7"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dop-04-ufk" userLabel="Places Container">
+                                <rect key="frame" x="0.0" y="410.5" width="414" height="402.5"/>
+                                <connections>
+                                    <segue destination="XmY-GY-Nbi" kind="embed" identifier="PlacesTable" id="pNB-WD-oJC"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mwu-Cx-fcy" firstAttribute="trailing" secondItem="0Kb-8M-uyL" secondAttribute="trailing" id="2au-ui-sih"/>
+                            <constraint firstItem="dop-04-ufk" firstAttribute="bottom" secondItem="0Kb-8M-uyL" secondAttribute="bottom" id="HNc-na-Jkk"/>
+                            <constraint firstItem="dop-04-ufk" firstAttribute="height" secondItem="mwu-Cx-fcy" secondAttribute="height" id="IeQ-TF-zpw"/>
+                            <constraint firstItem="dop-04-ufk" firstAttribute="top" secondItem="mwu-Cx-fcy" secondAttribute="bottom" constant="8" id="MaJ-LJ-Nd8"/>
+                            <constraint firstItem="mwu-Cx-fcy" firstAttribute="leading" secondItem="0Kb-8M-uyL" secondAttribute="leading" id="h3D-bL-21a"/>
+                            <constraint firstItem="dop-04-ufk" firstAttribute="trailing" secondItem="0Kb-8M-uyL" secondAttribute="trailing" id="nBu-qa-Rjy"/>
+                            <constraint firstItem="dop-04-ufk" firstAttribute="leading" secondItem="0Kb-8M-uyL" secondAttribute="leading" id="nqj-73-z32"/>
+                            <constraint firstItem="mwu-Cx-fcy" firstAttribute="top" secondItem="5sT-qR-DEJ" secondAttribute="top" id="yyY-jB-KkX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Kb-8M-uyL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Places" image="Globe" id="U6O-e2-GFN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3C-Qu-5b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457.97101449275368" y="391.74107142857139"/>
+        </scene>
+        <!--MapView-->
+        <scene sceneID="r74-rn-yQ1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MapView" id="Hka-fD-DUO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74Y-3o-rAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="275"/>
+        </scene>
+        <!--PlacesTable-->
+        <scene sceneID="CCO-Y1-P1D">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlacesTable" id="XmY-GY-Nbi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsD-tt-D9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="498"/>
+        </scene>
+        <!--Places Tab Bar View Controller-->
+        <scene sceneID="Bm4-FI-XZ8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="coD-YT-8mh" customClass="PlacesTabBarViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YYo-Te-wKk">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="C6x-zb-Flt" kind="relationship" relationship="viewControllers" id="d9V-up-xo5"/>
+                        <segue destination="svB-gS-EC4" kind="relationship" relationship="viewControllers" id="3Jz-yd-dYl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Djv-bp-N9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-227.536231884058" y="27.455357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Globe" width="23" height="23"/>
+        <image name="Plus" width="21" height="21"/>
+    </resources>
+</document>
